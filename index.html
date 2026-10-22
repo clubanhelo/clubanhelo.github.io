@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Club anhelo · Estudio de yoga, poesía y creación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --citron:#CAD183; --tyrian:#66023C; --rosa:#F1CDD5; --olivo:#34350f; --azul:#BCD2F2; --marron:#4a3324;
+  --paper:#faf6ee; --ink:#2a2118;
+  --serif:"Bodoni Moda","Didot",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --wide:"Syne","Arial Black",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1d1b12;--ink:#f3ecdc}}
+:root[data-theme="dark"]{--paper:#1d1b12;--ink:#f3ecdc}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 var(--sans)}
+img{max-width:100%}
+h1,h2,h3{margin:0;font-weight:400}
+.big{font-family:var(--serif);text-transform:uppercase;letter-spacing:-.03em;line-height:.92;font-size:clamp(2.6rem,10vw,7.5rem)}
+.wide{font-family:var(--wide);font-weight:800;text-transform:uppercase;line-height:1;font-size:clamp(1.8rem,6vw,4rem)}
+section{padding:clamp(3.5rem,9vw,7rem) clamp(1.2rem,5vw,4rem)}
+.wrap{max-width:1100px;margin:0 auto}
+p{max-width:60ch}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem clamp(1.2rem,5vw,4rem);background:var(--olivo);color:var(--citron)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--olivo);z-index:21}
+header b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.3rem}
+nav{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:inherit;text-decoration:none}nav a:hover{text-decoration:underline}
+
+/* hero */
+.hero{background:var(--olivo);color:var(--citron);text-align:center;padding-top:clamp(3rem,8vw,6rem);position:relative;overflow:hidden}
+.hero .script{font-family:var(--serif);font-style:italic;font-size:clamp(2.2rem,7vw,4.5rem);margin-bottom:-.4em;position:relative}
+.hero .big{color:var(--rosa)}
+.hero p{margin:1.5rem auto;color:#e8e6c4}
+.petal{position:absolute;opacity:.18;pointer-events:none}
+.btn{display:inline-block;padding:.75rem 1.6rem;border:1px solid currentColor;background:transparent;color:inherit;font:500 .8rem var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--citron);color:var(--olivo)}
+.solid{background:var(--tyrian);color:var(--citron);border-color:var(--tyrian)}
+.solid:hover{background:var(--olivo);border-color:var(--olivo)}
+
+/* marquee */
+.strip{background:var(--tyrian);color:var(--citron);overflow:hidden;white-space:nowrap;padding:.7rem 0;font-family:var(--serif);font-style:italic;font-size:1.2rem}
+.strip div{display:inline-block;animation:run 28s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.strip div{animation:none}}
+
+/* sections */
+#conocenos{background:var(--rosa);color:var(--tyrian)}
+#conocenos .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;margin-top:2.5rem;align-items:start}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 8px 8px;background:var(--tyrian);display:grid;place-items:center;overflow:hidden}
+#yoga{background:var(--citron);color:var(--olivo)}
+#poesia{background:var(--tyrian);color:var(--citron)}
+#creativas{background:var(--azul);color:var(--marron)}
+#galeria{background:var(--paper)}
+#reservas{background:var(--citron);color:var(--olivo)}
+#contacto{background:var(--olivo);color:var(--citron)}
+.sub{font-family:var(--serif);font-style:italic;font-size:1.4rem;margin:.3rem 0 1.5rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2rem}
+.card{border:1px solid currentColor;padding:1.2rem 1.3rem;display:flex;flex-direction:column;gap:.4rem}
+.card h3{font-family:var(--wide);font-weight:700;font-size:1.05rem;text-transform:uppercase}
+.card small{opacity:.85;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem}
+.card .btn{margin-top:auto;align-self:flex-start;padding:.5rem 1rem}
+.card p{margin:.2rem 0 .8rem;font-size:.95rem}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3.5vw,2.2rem);line-height:1.25;margin:2rem 0;max-width:26ch}
+
+/* gallery */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.grid{columns:3 220px;column-gap:1rem}
+.tile{break-inside:avoid;margin:0 0 1rem;position:relative;cursor:zoom-in;border:0;padding:0;width:100%;display:block;background:none;overflow:hidden}
+.tile img{display:block;width:100%;height:auto;transition:transform .4s}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.04)}
+.ph{display:grid;place-items:center;color:var(--ink);font-family:var(--serif);font-style:italic;font-size:1.1rem;text-align:center;padding:1rem}
+.note{font-size:.85rem;opacity:.75;margin-top:1rem}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:50;background:rgba(20,18,8,.94);display:none;align-items:center;justify-content:center;padding:3.5rem 1rem 2rem}
+#lb.open{display:flex}
+#lb .stage{max-width:min(1200px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:.8rem}
+#lb img{max-width:100%;max-height:calc(100vh - 8rem);object-fit:contain}
+#lb .ph{width:min(80vw,700px);aspect-ratio:4/3;font-size:1.6rem}
+#lb figcaption{color:#eee;font-size:.9rem}
+#lb button{position:absolute;background:none;border:1px solid #ffffff66;color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+#lb .x{top:calc(env(safe-area-inset-top,0px) + 1rem);right:1rem}
+#lb .p{left:1rem;top:50%}#lb .n{right:1rem;top:50%}
+
+/* form */
+form{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;max-width:760px}
+label{display:flex;flex-direction:column;gap:.3rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+input,select,textarea{font:inherit;font-size:1rem;letter-spacing:0;text-transform:none;padding:.7rem .8rem;border:1px solid var(--olivo);background:#fffdf2;color:#2a2118;border-radius:0}
+.full{grid-column:1/-1}
+#ok{display:none;margin-top:1.2rem;padding:1rem;background:var(--olivo);color:var(--citron);max-width:760px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
+.contact h3{font-family:var(--serif);font-style:italic;font-size:1.4rem;margin-bottom:.3rem}
+.contact a{color:inherit}
+footer{background:var(--olivo);color:var(--citron);text-align:center;padding:1.5rem;font-size:.8rem;border-top:1px solid #ffffff22}
+
+@media (max-width:760px){
+  #conocenos .cols{grid-template-columns:1fr}
+  .arch{max-width:260px}
+  form{grid-template-columns:1fr}
+  nav{font-size:.68rem;gap:.7rem}
+  header b{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <b>Club anhelo</b>
+  <nav>
+    <a href="#conocenos">Conócenos</a><a href="#yoga">Yoga</a><a href="#poesia">Poesía</a>
+    <a href="#creativas">Creativas</a><a href="#galeria">Estudio</a><a href="#reservas">Reservas</a><a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="petal" style="left:-40px;top:20px;width:260px" viewBox="0 0 100 100"><path fill="#CAD183" d="M50 5c20 15 30 35 20 55-5 12-15 25-20 35-5-10-15-23-20-35C20 40 30 20 50 5z"/></svg>
+  <svg class="petal" style="right:-30px;bottom:10px;width:300px;transform:rotate(60deg)" viewBox="0 0 100 100"><path fill="#BCD2F2" d="M50 5c20 15 30 35 20 55-5 12-15 25-20 35-5-10-15-23-20-35C20 40 30 20 50 5z"/></svg>
+  <div class="script">Casa</div>
+  <h1 class="big">Verdor</h1>
+  <p>Un estudio independiente donde el cuerpo respira, las palabras se leen en voz alta y las manos se manchan de color. Yoga, poesía y creación en pequeños grupos.</p>
+  <a class="btn" href="#reservas">Reservar clase</a>
+</section>
+
+<div class="strip" aria-hidden="true"><div>Yoga ~ Poesía ~ Pintura ~ Lectura ~ Respiración ~ Yoga ~ Poesía ~ Pintura ~ Lectura ~ Respiración ~ Yoga ~ Poesía ~ Pintura ~ Lectura ~ Respiración ~ Yoga ~ Poesía ~ Pintura ~ Lectura ~ Respiración ~</div></div>
+
+<section id="conocenos"><div class="wrap">
+  <h2 class="big">Conócenos</h2>
+  <div class="cols">
+    <div>
+      <p class="sub">Cada espacio tiene una historia.</p>
+      <p>Club anhelo nació como un pequeño taller de barrio con mucha luz y un suelo de madera que cruje. Lo abrimos para tener un lugar sin prisa donde practicar yoga y, después, quedarnos a leer un poema, pintar con acuarelas o simplemente escuchar.</p>
+      <p>Somos un estudio independiente: grupos reducidos, sin competencia y sin experiencia previa necesaria. Aquí se viene tal y como se está.</p>
+      <p>[Escribe aquí quién eres, cuándo abristeis y qué os mueve. Este texto es un ejemplo.]</p>
+    </div>
+    <div class="arch">
+      <svg viewBox="0 0 100 130" width="70%"><path fill="#CAD183" d="M50 10c18 14 26 34 17 52-5 10-12 22-17 32-5-10-12-22-17-32C24 44 32 24 50 10z"/><path fill="#F1CDD5" d="M50 70c14 6 22 20 14 34-4 7-9 14-14 20-5-6-10-13-14-20-8-14 0-28 14-34z" opacity=".8"/></svg>
+    </div>
+  </div>
+</div></section>
+
+<section id="yoga"><div class="wrap">
+  <h2 class="big">Yoga</h2>
+  <p class="sub">Para moverse despacio y volver a casa.</p>
+  <p>Clases de hatha, vinyasa suave y yin en grupos de máximo 10 personas. Tenemos esterillas, bloques y mantas para quien las necesite.</p>
+  <div class="cards" id="cl-yoga"></div>
+</div></section>
+
+<section id="poesia"><div class="wrap">
+  <h2 class="big">Poesía</h2>
+  <div class="quote">Leer en voz alta es dejar que el poema te habite.</div>
+  <p>Sesiones de lectura interpretativa: elegimos poemas, los leemos en círculo, jugamos con la voz, el ritmo y el silencio. No hace falta saber de poesía, solo ganas de escuchar.</p>
+  <div class="cards" id="cl-poesia"></div>
+</div></section>
+
+<section id="creativas"><div class="wrap">
+  <h2 class="big">Actividades creativas</h2>
+  <p class="sub">Manos a la obra, sin pretensiones.</p>
+  <p>Pintura, collage, escritura libre y cuaderno de artista. Todo el material está incluido y cada sesión termina con algo que te puedes llevar a casa.</p>
+  <div class="cards" id="cl-creativas"></div>
+</div></section>
+
+<section id="galeria"><div class="wrap">
+  <div class="gal-head">
+    <h2 class="wide">El estudio</h2>
+    <div>
+      <input type="file" id="file" accept="image/*" multiple hidden>
+      <button class="btn" id="addbtn" type="button">+ Añadir fotos</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="note">Pulsa cualquier foto para verla en grande. Las fotos añadidas con el botón solo se ven en tu navegador; para dejarlas fijas en la web, añade sus rutas en la lista <code>fotos</code> del código.</p>
+</div></section>
+
+<section id="reservas"><div class="wrap">
+  <h2 class="big">Reservas</h2>
+  <p class="sub">Elige tu clase y guarda tu sitio.</p>
+  <form id="f">
+    <label>Nombre<input name="nombre" required></label>
+    <label>Correo<input name="email" type="email" required></label>
+    <label>Actividad<select name="actividad" id="sel" required></select></label>
+    <label>Fecha<input name="fecha" type="date" required></label>
+    <label>Personas<input name="personas" type="number" min="1" max="6" value="1"></label>
+    <label>Teléfono (opcional)<input name="tel" type="tel"></label>
+    <label class="full">Comentarios<textarea name="msg" rows="3" placeholder="¿Es tu primera vez? ¿Alguna necesidad especial?"></textarea></label>
+    <div class="full"><button class="btn solid" type="submit">Enviar solicitud</button></div>
+  </form>
+  <div id="ok" role="status">Gracias. Se abrirá tu correo con la solicitud lista para enviar; te confirmaremos la plaza en 24 horas.</div>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <h2 class="big">Contacto</h2>
+  <div class="contact">
+    <div><h3>Dónde estamos</h3><p>Calle del Ejemplo, 12<br>[Tu ciudad]</p></div>
+    <div><h3>Escríbenos</h3><p><a href="mailto:hola@casaverdor.example">hola@casaverdor.example</a><br>+34 600 000 000</p></div>
+    <div><h3>Horario</h3><p>Lun a vie: 9:00 – 21:00<br>Sábados: 10:00 – 14:00</p></div>
+    <div><h3>Síguenos</h3><p><a href="#contacto">Instagram</a> · <a href="#contacto">WhatsApp</a></p></div>
+  </div>
+</div></section>
+
+<footer>© 2026 Club anhelo · Estudio independiente de yoga, poesía y creación</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotos">
+  <button class="x" aria-label="Cerrar">×</button>
+  <button class="p" aria-label="Anterior">‹</button>
+  <figure class="stage" style="margin:0"></figure>
+  <button class="n" aria-label="Siguiente">›</button>
+</div>
+
+<script>
+/* ====== EDITA AQUÍ ====== */
+const EMAIL="hola@casaverdor.example";
+// Fotos del estudio: pon la ruta en src (p. ej. "fotos/sala.jpg"). Sin src se muestra un marcador de color.
+const fotos=[
+  {src:"",alt:"La sala principal con luz de la mañana",bg:"#CAD183",h:300},
+  {src:"",alt:"Esterillas y mantas",bg:"#F1CDD5",h:220},
+  {src:"",alt:"Rincón de lectura",bg:"#BCD2F2",h:260},
+  {src:"",alt:"Mesa de pintura",bg:"#d9b9c6",h:240},
+  {src:"",alt:"Flores en la entrada",bg:"#b9bf6e",h:320},
+  {src:"",alt:"Círculo de poesía",bg:"#e7c9a8",h:230}
+];
+const clases={
+  yoga:[
+    {t:"Hatha suave",d:"Martes y jueves · 19:00",p:"Posturas básicas y respiración. Ideal para empezar.",pr:"12 €"},
+    {t:"Vinyasa",d:"Lunes y miércoles · 18:30",p:"Movimiento fluido, ritmo medio, buen sudor.",pr:"12 €"},
+    {t:"Yin y silencio",d:"Domingos · 11:00",p:"Posturas largas, quietud y descanso profundo.",pr:"12 €"}
+  ],
+  poesia:[
+    {t:"Lectura interpretativa",d:"Viernes · 20:00",p:"Leemos en círculo y trabajamos voz y presencia.",pr:"10 €"},
+    {t:"Poesía y té",d:"Sábados · 12:00",p:"Una hora tranquila con poemas elegidos por el grupo.",pr:"8 €"}
+  ],
+  creativas:[
+    {t:"Pintura a la acuarela",d:"Miércoles · 20:00",p:"Color, agua y mucha paciencia. Material incluido.",pr:"15 €"},
+    {t:"Cuaderno de artista",d:"Sábados · 17:00",p:"Collage, escritura y dibujo en un mismo cuaderno.",pr:"15 €"},
+    {t:"Taller de flores prensadas",d:"1.er domingo del mes",p:"Compón láminas botánicas para enmarcar.",pr:"18 €"}
+  ]
+};
+/* ========================= */
+const $=s=>document.querySelector(s);
+const sel=$("#sel");
+sel.innerHTML='<option value="">Elige una actividad</option>';
+for(const k in clases){
+  const og=document.createElement("optgroup");og.label={yoga:"Yoga",poesia:"Poesía",creativas:"Creativas"}[k];
+  clases[k].forEach(c=>{
+    og.append(new Option(c.t+" · "+c.d,c.t));
+    const el=document.createElement("div");el.className="card";
+    el.innerHTML='<small>'+c.d+'</small><h3>'+c.t+'</h3><p>'+c.p+'</p><small>'+c.pr+'</small>';
+    const b=document.createElement("button");b.className="btn";b.type="button";b.textContent="Reservar";
+    b.onclick=()=>{sel.value=c.t;$("#reservas").scrollIntoView();};
+    el.append(b);$("#cl-"+k).append(el);
+  });
+  sel.append(og);
+}
+$("#f").addEventListener("submit",e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(e.target));
+  const body="Hola, quiero reservar:\n\nActividad: "+d.actividad+"\nFecha: "+d.fecha+"\nPersonas: "+d.personas+"\nNombre: "+d.nombre+"\nCorreo: "+d.email+"\nTeléfono: "+(d.tel||"-")+"\n\n"+(d.msg||"");
+  $("#ok").style.display="block";
+  location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Reserva: "+d.actividad)+"&body="+encodeURIComponent(body);
+});
+
+/* galería */
+const grid=$("#grid"),lb=$("#lb"),stage=lb.querySelector(".stage");let cur=0;
+function ph(f,big){const d=document.createElement("div");d.className="ph";d.style.background=f.bg||"#CAD183";if(!big)d.style.height=(f.h||250)+"px";d.textContent=f.alt;return d}
+function render(){
+  grid.innerHTML="";
+  fotos.forEach((f,i)=>{
+    const b=document.createElement("button");b.className="tile";b.type="button";b.setAttribute("aria-label","Ampliar: "+f.alt);
+    if(f.src){const im=document.createElement("img");im.src=f.src;im.alt=f.alt;im.loading="lazy";b.append(im)}else b.append(ph(f));
+    b.onclick=()=>open(i);grid.append(b);
+  });
+}
+function show(){
+  const f=fotos[cur];stage.innerHTML="";
+  if(f.src){const im=document.createElement("img");im.src=f.src;im.alt=f.alt;stage.append(im)}else stage.append(ph(f,true));
+  const c=document.createElement("figcaption");c.textContent=f.alt+"  ·  "+(cur+1)+" / "+fotos.length;stage.append(c);
+}
+function open(i){cur=i;show();lb.classList.add("open");document.body.style.overflow="hidden"}
+function close(){lb.classList.remove("open");document.body.style.overflow=""}
+function go(n){cur=(cur+n+fotos.length)%fotos.length;show()}
+lb.querySelector(".x").onclick=close;lb.querySelector(".p").onclick=()=>go(-1);lb.querySelector(".n").onclick=()=>go(1);
+lb.addEventListener("click",e=>{if(e.target===lb)close()});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")go(-1);if(e.key==="ArrowRight")go(1)});
+$("#addbtn").onclick=()=>$("#file").click();
+$("#file").onchange=e=>{[...e.target.files].forEach(f=>fotos.push({src:URL.createObjectURL(f),alt:f.name.replace(/\.[^.]+$/,"")}));e.target.value="";render()};
+render();
+</script>
+</body>
+</html>
